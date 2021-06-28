@@ -17260,3 +17260,23 @@ label monika_sophia:
     m 3eud "...and I know the technology isn't perfect yet,{w=0.2} she still has certain limitations, but just knowing that this exists...{w=0.3}{nw}"
     extend 1duu "well, hope is a wonderful thing~"
     return
+    
+    init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="monika_example", # event label (MUST BE UNIQUE)
+            category=["example", "topic"], # list of categories this topic belongs in (These are automatically capitalized)
+            prompt="Example Topic", # button text
+            random=True, # True if this topic should appear randomly
+            pool=True # True if this topic should appear in "Ask a Question"
+        )
+    )
+
+label monika_example:
+    m 1a "This is an example topic."
+    m 3d "I feel like this doesn't actually belong here..."
+    m 2e "Why would somebody just add the example template directly into the mod?"
+    m 5r "They really shouldn't be allowed to contribute to this repository anymore."
+    return
+
